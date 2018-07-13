@@ -34,14 +34,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           }		
 			
 			//If database has been updated
-			if (mysqli_affected_rows($connection) == 1) {
+			if (mysqli_affected_rows($connection) == 1){
 				// Save the values to be used in next pages
 				$_SESSION['username'] = $username;
+				$_SESSION['usertype'] = $usertype;
 				
-
 				// Redirect the user
 				ob_end_clean(); // Delete the buffer.
-				header("Location: dashboard.php");
+				if ($usertype == 'admin') {
+              		header("Location: admin_dashboard.php");
+          		}else if ($usertype == 'student') {
+            		header("Location: student_dashboard.php");
+         		 }		
 				exit();
 				
 	
