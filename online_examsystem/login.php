@@ -11,22 +11,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+	//$type = $_SESSION['usertype'];
 	
-	if ($username && $password) {
-
+	//if ($username && $password && $type) {
+	if (isset($_POST['submit'])) {
 		// Query the database
 		$query = "SELECT username, password FROM User WHERE (username='$username' AND password=SHA1('$password'))";		
 		$r = mysqli_query ($connection, $query) or trigger_error("Query: $query\n<br />MySQL Error: " . mysqli_error($connection));
+		
 		//If user is found
 		if (@mysqli_num_rows($r) == 1) {
 			// Save the values to be used in next pages
 			$_SESSION = mysqli_fetch_array ($r, MYSQLI_ASSOC); 
 			mysqli_free_result($r);
 			mysqli_close($connection);
-
+	
 			// Redirect the user
 			ob_end_clean(); // Delete the buffer.
-			header("Location: dashboard.php");
+			if ($_SESSION['usertype'] === 'admin') {
+              	header("Location: admin_dashboard.php");
+          	}else if($_SESSION['usertype'] === 'student') {
+            	header("Location: student_dashboard.php");
+             }	
 			exit();
 				
 		} else { // User details not found in database
@@ -34,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 		
 	} else { // If something else went wrong.
-		echo '<p>Please try again.</p>';
+		echo '<p>Please try again. Something is wrong!</p>';
 	}
 	
 	mysqli_close($connection);
