@@ -34,7 +34,9 @@ correctAnswer varchar(60)
 create table Course(
 courseID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 courseName varchar(50) NOT NULL,
-courseCode varchar(50)
+courseCode varchar(50),
+adminID int,
+FOREIGN KEY (adminID) REFERENCES Admin(adminID)
 );
 
 create table exam(

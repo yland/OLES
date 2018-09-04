@@ -1,0 +1,123 @@
+h1, h2, p {
+font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    color: black;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+}
+
+.login, .reg {
+     /* Size and position */
+    width: 300px;
+    margin: 60px auto 30px;
+    padding: 10px;
+    position: relative;
+
+    /* Font styles */
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    color: black;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+}
+
+.login{  
+    
+    margin-right: 50%;
+}
+
+
+ /* input fields */
+input[type=text], input[type=email], input[type=password] {
+
+    /* Size and position */
+    width: 45%;
+    height: 15px;
+    padding: 8px 4px 8px 10px;
+    margin-bottom: 15px;
+
+    /* Styles */
+    border: 1px solid #4e3043; /* Fallback */
+    border: 1px solid rgba(78,48,67, 0.8);
+   
+    border-radius: 2px;
+    box-shadow: 
+        0 1px 0 rgba(255,255,255,0.2), 
+        inset 0 1px 1px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    /* Font styles */
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    color: black;
+    font-size: 13px;
+}
+
+ /* Styling submit button */
+input[type=submit] {
+ display: inline;
+}
+.submit {
+	
+background: #013349;
+ display: inline;
+
+color: white;
+
+ width: 45%;
+ height: 40px;
+
+border-style: outset;
+
+font-family: 'Raleway', 'Lato', Arial, sans-serif;
+
+text-shadow:none;
+
+}
+
+/* Styling radio buttons */
+.container {
+  display: inline;
+
+}
+
+
+/* Styling form divs */
+.login, .reg, .course, .exam, .st-exam {
+    margin: auto;
+    width: 50%;
+   
+    border: 3px ;
+    padding: 10px;
+    background-color: #ccc;
+    text-align: left;
+}
+
+.body-div {
+	margin: auto;
+    width: 50%;
+    border: 3px ;
+    padding: 10px;
+    background-color: #ccc;
+    text-align: left;
+}
+#rlink {
+	text-align: center;
+}
+a{
+ text-decoration:none;
+ color:#cc0000; 
+ text-align: center;
+}
+
+a.link{
+ background: #4479BA;
+ color: #FFF;
+ border:1px solid #660000;
+ border-radius:5px;
+ margin:5px;
+ width: 150px;
+ padding:10px 10px 10px 10px;
+ text-decoration:none;
+
+ display: block;
+}

@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$_SESSION['username'] = $username;
 				$_SESSION['usertype'] = $usertype;
 				
+				
 				// Redirect the user
 				ob_end_clean(); // Delete the buffer.
 				if ($usertype == 'admin') {
@@ -66,17 +67,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<ul>
-  <li><a href="login.php">Login</a></li>
-</ul> 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<div class="body-div">
+<body>
 
-<h1>Register</h1>
+
+<div class="reg">
 <form action="registration.php" method="post">
+	<h1>Register</h1>
 	<p><b>Full Name:</b> <input type="text" name="fullname" required></p>
 	<p><b>Username:</b> <input type="text" name="username" required></p>
 	<p><b>Password:</b> <input type="password" name="password" required></p>
 	<p><b>Email:</b> <input type="email" name="email"></p>
-	<input type="radio" name="usertype" value="admin" required> Operate as admin<br>
-	<input type="radio" name="usertype" value="student" required> Operate as student<br>
-	<input type="submit" name="submit" value="Register"/>
+
+	<input type="radio" name="usertype" value="student" required>
+	<label class="container">As Student
+	<span class="checkmark"></span>
+</label>
+
+<input type="radio" name="usertype" value="admin" required>
+<label class="container">As Admin
+  <span class="checkmark"></span>
+</label>
+	<input class="submit" type="submit" name="submit" value="Register"/>
+
 </form>
+</div>
+</body>
+</div>
+</html>

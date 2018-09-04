@@ -1,14 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Dashboard</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<div class="body-div">
+<body>
+
 <?php
 // Start output buffering and initialize a session
 ob_start();
 session_start();
 
-echo '<h1>Welcome ';
-echo  $_SESSION['username'] ;
-echo  $_SESSION['usertype'] ;
-echo ', You are a student!</h1>';
-
 ?>
-<li><a href="registration.php">Register</a></li>
-<li><a href="login.php">login</a></li>
+<a  id="rlink" href="logout.php">Logout</a>
+<h1>Welcome Student!</h1>
+
+<a class="link" href="take_exam.php">Take an exam</a>
+<a class="link" href="student_detail.php">See past exam details</a>
+
+</body>
+</div>
+</html>
 
